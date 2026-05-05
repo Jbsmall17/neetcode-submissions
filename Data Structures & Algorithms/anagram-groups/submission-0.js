@@ -1,0 +1,18 @@
+class Solution {
+    /**
+     * @param {string[]} strs
+     * @return {string[][]}
+     */
+    groupAnagrams(strs) {
+        let obj = {}
+        for(let s of strs){
+            const sortedS = s.split("").sort().join("")
+            if(!obj[sortedS]){
+                obj[sortedS] = []
+            }
+            obj[sortedS].push(s)
+        }
+        return Object.values(obj)
+    }
+}
+ 
